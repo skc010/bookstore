@@ -53,4 +53,6 @@ Bookstore::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  get"/books"=>"books#index",as:'books'
 end
