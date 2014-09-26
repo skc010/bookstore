@@ -55,4 +55,5 @@ Bookstore::Application.routes.draw do
   #   end
 
  resources :books
+ root 'books#index'
 end
