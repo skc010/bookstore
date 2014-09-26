@@ -54,6 +54,8 @@ Bookstore::Application.routes.draw do
   #     resources :products
   #   end
 
- resources :books
+ resources :books do
+    get 'page/:page', :action => :index, :on => :collection
+end
  root 'books#index'
 end
