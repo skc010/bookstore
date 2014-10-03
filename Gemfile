@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'kaminari'
 
+gem 'powerpack'
+
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'bootstrap-sass', '~> 3.1.1'
