@@ -1,8 +1,7 @@
 class Book < ActiveRecord::Base
 	scope :bargins, -> { where('price < 10.00')}
 	scope :by, ->(author) { where('author = ?', author)}
-
-	has_many :reviews
+	
 	validates :title, :author, :pages, :price, presence: true
 	validates :pages,
 		numericality: { only_integer: true, greater_than_or_equal_to: 0},
@@ -11,6 +10,7 @@ class Book < ActiveRecord::Base
 		numericality: {greater_than_or_equal_to: 0},
 		if: "price.present?"
 
+	has_many :reviews, dependent: :destroy
 	def average_stars
 		reviews.average(:stars)
 	end
